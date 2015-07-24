@@ -11,6 +11,8 @@ package projetoworkarray;
  */
 public class TelaInterativa extends javax.swing.JFrame {
 
+    ArrayAprimorado arrayAprimorado = new ArrayAprimorado();
+    
     /**
      * Creates new form TelaInterativa
      */
@@ -41,7 +43,6 @@ public class TelaInterativa extends javax.swing.JFrame {
         setTitle("Tela Interativa");
         setMaximumSize(new java.awt.Dimension(400, 500));
         setMinimumSize(new java.awt.Dimension(400, 500));
-        setPreferredSize(new java.awt.Dimension(400, 500));
 
         inserirJButton.setText("Inserir");
         inserirJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -120,24 +121,21 @@ public class TelaInterativa extends javax.swing.JFrame {
     private void inserirJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirJButtonActionPerformed
         
         String valorInserir = inserirJTextField.getText();
-        
-        ArrayAprimorado arrayAprimorado = new ArrayAprimorado();
         arrayAprimorado.inserirValor(valorInserir);
         
         //historicoJTextArea.setText( arrayAprimorado.retornaExtratoArray() );
         totalJTextField.setText( arrayAprimorado.retornaSomaConta() );
-        
-        System.out.println("\nExtrato Conta Array Aprimorado: " + arrayAprimorado.retornaExtratoArray() );
-        System.out.println("\nSoma Conta Array Aprimorado: " + arrayAprimorado.retornaSomaConta() );
         
         
     }//GEN-LAST:event_inserirJButtonActionPerformed
 
     private void retirarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarJButtonActionPerformed
         
-        /*arrayAprimorado.removerValor("460");
-        System.out.println("\nExtrato Conta Array Aprimorado: " + arrayAprimorado.retornaExtratoArray() );
-        System.out.println("\nSoma Conta Array Aprimorado: " + arrayAprimorado.retornaSomaConta() );*/
+        String valorRemover = retirarJTextField.getText();
+        arrayAprimorado.removerValor(valorRemover);
+        
+        //historicoJTextArea.setText( arrayAprimorado.retornaExtratoArray() );
+        totalJTextField.setText( arrayAprimorado.retornaSomaConta() );
         
     }//GEN-LAST:event_retirarJButtonActionPerformed
 
